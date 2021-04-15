@@ -1,0 +1,30 @@
+{
+  "name": "com.lupidan.unity-apptrackingtransparency",
+  "displayName": "AppTrackingTransparency for Unity",
+  "version": "0.5.0",
+  "unity": "2018.3",
+  "type": "library",
+  "author": {
+    "name": "Daniel Lupia\u00f1ez Casares",
+    "email": "daniel.lupianez.casares@gmail.com",
+    "url": "https://github.com/lupidan"
+  },
+  "keywords": [
+    "apple",
+    "iphone",
+    "ios",
+    "ipad",
+    "apptrackingtransparency",
+    "ATTrackingManager",
+    "native",
+    "unity"
+  ],
+  "category": "Unity",
+  "samples": [
+    {
+      "displayName": "Request tracking permission example",
+      "description": "Sample code that request tracking permission.",
+      "path": "Samples~/RequestTrackingSample"
+    }
+  ]
+}
