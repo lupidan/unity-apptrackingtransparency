@@ -72,7 +72,7 @@ namespace AppTrackingTransparency.Editor
 
                 var labelWidth = EditorGUIUtility.labelWidth;
 
-                EditorGUIUtility.labelWidth = 300;
+                EditorGUIUtility.labelWidth = 250;
                 GUILayout.Space(50);
                 GUILayout.Label("iOS Build Settings", EditorStyles.boldLabel);
                 GUILayout.Space(10);
