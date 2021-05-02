@@ -3,7 +3,7 @@
     "m_AutomaticPostProcessing": true,
     "m_AutomaticPostProcessingCallbackOrder": 10,
     "m_AddAppTransparencyTrackingFramework": true,
-    "m_AddUserTrackingUsageDescription": false,
+    "m_AddUserTrackingUsageDescription": true,
     "m_UserTrackingUsageDescription": "Your data will be used to deliver personalized ads to you",
     "m_AutoDetectInfoPlistFilePath": true,
     "m_MainInfoPlistFilePath": "Info.plist"
