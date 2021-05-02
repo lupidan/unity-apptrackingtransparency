@@ -5,15 +5,24 @@ namespace AppTrackingTransparency.Editor.Settings
 {
     public static class AppTrackingTransparencySettingsManager
     {
+        private const string SharedProjectSettingsFolderName = "ProjectSettings";
+        private const string DedicatedProjectSettingsFolderName = "com.lupidan.unity-apptrackingtransparency";
+        private const string DedicatedSettingsFileName = "AppTrackingTransparencySettings.json";
+
+        public static readonly string PrintableProjectSettingsFilePath = Path.Combine(
+            SharedProjectSettingsFolderName,
+            DedicatedProjectSettingsFolderName,
+            DedicatedSettingsFileName);
+
         private static readonly string SettingsFolderPath = Path.Combine(
             Application.dataPath,
             "..",
-            "ProjectSettings",
-            "com.lupidan.unity-apptrackingtransparency");
+            SharedProjectSettingsFolderName,
+            DedicatedProjectSettingsFolderName);
 
         private static readonly string SettingsFilePath = Path.Combine(
             SettingsFolderPath,
-            "AppTrackingTransparencySettings.json");
+            DedicatedSettingsFileName);
 
         public static AppTrackingTransparencySettings LoadOrCreateSettings()
         {
