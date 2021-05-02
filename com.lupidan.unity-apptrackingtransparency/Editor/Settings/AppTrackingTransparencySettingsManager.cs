@@ -20,17 +20,15 @@ namespace AppTrackingTransparency.Editor.Settings
             var settings = LoadSettings();
             if (settings == null)
             {
-                settings = new AppTrackingTransparencySettings
-                {
-                    SettingsFileVersion = 1,
-                    AutomaticPostProcessing = true,
-                    AutomaticPostProcessingCallbackOrder = 10,
-                    AddAppTransparencyTrackingFramework = true,
-                    AutoDetectInfoPlistFilePath = true,
-                    MainInfoPlistFilePath = string.Empty,
-                    UserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you",
-                };
-
+                settings = new AppTrackingTransparencySettings();
+                settings.SettingsFileVersion = 1;
+                settings.AutomaticPostProcessing = true;
+                settings.AutomaticPostProcessingCallbackOrder = 10;
+                settings.AddAppTransparencyTrackingFramework = true;
+                settings.AddUserTrackingUsageDescription = true;
+                settings.UserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you";
+                settings.AutoDetectInfoPlistFilePath = true;
+                settings.MainInfoPlistFilePath = "Info.plist";
                 WriteSettings(settings);
             }
 
