@@ -1,0 +1,2 @@
+# Folders ending in ~ may be ignored by global gitignore settings
+!*~
