@@ -7,9 +7,9 @@ namespace RequestTrackingSample
 {
     public class RequestTrackingSampleMenu : MonoBehaviour
     {
-        [SerializeField] private Text idfaLabel;
-        [SerializeField] private Text authorizedStatusLabel;
-        [SerializeField] private Button requestAuthorizationButton;
+        public Text idfaLabel;
+        public Text authorizedStatusLabel;
+        public Button requestAuthorizationButton;
 
         private IAppTrackingTransparencyManager _appTrackingTransparencyManager;
 
