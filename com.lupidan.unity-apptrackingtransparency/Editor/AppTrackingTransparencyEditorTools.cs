@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using AppTrackingTransparency.Common;
 using AppTrackingTransparency.Editor.Settings;
 using UnityEditor;
@@ -58,7 +59,7 @@ namespace AppTrackingTransparency.Editor
                 var storedIdfa = EditorGUILayout.TextField("IDFA", AppTrackingTransparencyEditorPrefs.Idfa);
                 if (GUILayout.Button("Random IDFA", new [] {GUILayout.MaxWidth(150)}))
                 {
-                    storedIdfa = Guid.NewGuid().ToString("D");
+                    storedIdfa = Guid.NewGuid().ToString("D").ToUpper(CultureInfo.InvariantCulture);
                 }
 
                 AppTrackingTransparencyEditorPrefs.Idfa = storedIdfa;
