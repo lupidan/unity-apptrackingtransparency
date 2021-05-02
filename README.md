@@ -9,7 +9,7 @@ Starting from iOS 14.0, the API was made available for developers, but the restr
 
 Starting from iOS 14.5, Apple started enforcing this rule, so all users have to give their permission to obtain the IDFA.
 
-IMAGE OF POPUP
+![Configuration](Img/03_ExamplePopup.jpeg)
 
 This plugin supports the following platforms:
 * **iOS**
@@ -45,31 +45,6 @@ Just add this line to the `Packages/manifest.json` file of your Unity Project:
 1. Download the most recent Unity package release [here](https://github.com/lupidan/unity-apptrackingtransparency/releases)
 2. Import the downloaded Unity package in your app.
 
-
-## Plugin configuration
-
-To access the plugin configuration just go to the menu present in **Assets -> AppTrackingTransparency -> Configuration** You should see a window like this:
-
-![Configuration](Img/00_PluginConfiguration.png)
-
-### Editor manager status
-In this section you can control the current status of the editor implementation for the plugin.
-
-- *Authorization Status*: Current authorization status returned by the editor implementation
-- *IDFA*: Current IDFA value returned by the editor implementation when the status is Authorized.
-- *Random IDFA*: Generates a new random IDFA value
-- *Reset status*: Completely reset the status of the editor implementation, simulating the status after a fresh app install.
-
-### iOS Build settings
-
-The plugin offers automated options for post-processing on iOS.
-This section allow you to configure what parts of the automatic post-processing you want to have for your project.
-- *Automatic postprocessing*: If enabled the automatic postprocessing for iOS will be run. If disabled, it will be completely ignored.
-- *Postprocessing Callback Order*: The order in which the postprocessing will be run. You can change the number so it works along other postprocessing scripts you may have in your project. The default value is 10.
-- *Add AppTrackingTransparency.framework*: If enabled, the automatic post-processing will automatically add the AppTrackingTrasnparency.framework as optional for compatibility with previous iOS versions.
-- *Add NSUserTrackingUsageDescription*: If enabled, the automatic post-processing will automatically add the required description to be displayed when requesting permission to the user.
-- *Tracking Usage Description*: String of text to be added as NSUserTrackingUsageDescription so it's displayed to the user when requesting permission.
-- *Auto-detect Info.plist file*: The NSUserTrackingUsageDescription value needs to be added to the main target's `Info.plist` file. When enabled, the auto post-processing will detect the current file and add the value in it. If disabled, you will have the option to specify the relative path for the `Info.plist` file you want to modify.
 
 ## Implementing the AppTrackingTransparency code 
 
@@ -134,6 +109,31 @@ this.AppTrackingTransparencyManager.RequestTrackingAuthorization(authStatus =>
     Debug.Log("Authorization status changed: " + authStatus);
 });
 ```
+
+## Plugin configuration
+
+To access the plugin configuration just go to the menu present in **Assets -> AppTrackingTransparency -> Configuration** You should see a window like this:
+
+![Configuration](Img/00_PluginConfiguration.png)
+
+### Editor manager status
+In this section you can control the current status of the editor implementation for the plugin.
+
+- *Authorization Status*: Current authorization status returned by the editor implementation
+- *IDFA*: Current IDFA value returned by the editor implementation when the status is Authorized.
+- *Random IDFA*: Generates a new random IDFA value
+- *Reset status*: Completely reset the status of the editor implementation, simulating the status after a fresh app install.
+
+### iOS Build settings
+
+The plugin offers automated options for post-processing on iOS.
+This section allow you to configure what parts of the automatic post-processing you want to have for your project.
+- *Automatic postprocessing*: If enabled the automatic postprocessing for iOS will be run. If disabled, it will be completely ignored.
+- *Postprocessing Callback Order*: The order in which the postprocessing will be run. You can change the number so it works along other postprocessing scripts you may have in your project. The default value is 10.
+- *Add AppTrackingTransparency.framework*: If enabled, the automatic post-processing will automatically add the AppTrackingTrasnparency.framework as optional for compatibility with previous iOS versions.
+- *Add NSUserTrackingUsageDescription*: If enabled, the automatic post-processing will automatically add the required description to be displayed when requesting permission to the user.
+- *Tracking Usage Description*: String of text to be added as NSUserTrackingUsageDescription so it's displayed to the user when requesting permission.
+- *Auto-detect Info.plist file*: The NSUserTrackingUsageDescription value needs to be added to the main target's `Info.plist` file. When enabled, the auto post-processing will detect the current file and add the value in it. If disabled, you will have the option to specify the relative path for the `Info.plist` file you want to modify.
 
 ## Any code samples?
 There is a [folder](https://github.com/lupidan/unity-apptrackingtransparency/tree/main/com.lupidan.unity-apptrackingtransparency/Samples%7E) inside the plugin code containing some samples.
