@@ -105,11 +105,7 @@ namespace AppTrackingTransparency.Native
 
         private static class PInvoke
         {
-#if UNITY_IOS || UNITY_TVOS
             private const string DllName = "__Internal";
-#elif UNITY_STANDALONE_OSX
-            private const string DllName = "MacOSAppTrackingTransparencyManager";
-#endif
             public delegate void RequestTrackingAuthorizationCallbackDelegate(uint requestId, uint rawAuthorizationStatus);
 
             [AOT.MonoPInvokeCallback(typeof(RequestTrackingAuthorizationCallbackDelegate))]
