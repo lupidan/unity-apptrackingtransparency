@@ -27,7 +27,7 @@ This plugin supports the following platforms:
 
 ## Installation
 
-> Current version is v0.5.0
+> Current version is v0.6.0
 
 Here is a list of available options to install the plugin
 
@@ -37,7 +37,7 @@ Just add this line to the `Packages/manifest.json` file of your Unity Project:
 
 ```json
 "dependencies": {
-    "com.lupidan.unity-apptrackingtransparency": "https://github.com/lupidan/unity-apptrackingtransparency.git?path=/com.lupidan.unity-apptrackingtransparency#v0.5.0"
+    "com.lupidan.unity-apptrackingtransparency": "https://github.com/lupidan/unity-apptrackingtransparency.git?path=/com.lupidan.unity-apptrackingtransparency#v0.6.0"
 }
 ```
 

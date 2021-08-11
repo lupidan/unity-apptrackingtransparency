@@ -54,16 +54,16 @@ static const uint AppTrackingTransparencyManagerAuthorizationStatusAuthorized = 
     
 }
 
-- (void) handleTrackingAuthorizationRequestResult:(uint)rawAuthorizationRequest forRequestId:(uint)requestId {
+- (void) handleTrackingAuthorizationRequestResult:(uint)rawStatus forRequestId:(uint)requestId {
     if ([self callingOperationQueue]) {
         [[self callingOperationQueue] addOperationWithBlock:^{
             if ([self requestTrackingAuthorizationCallback] != NULL) {
-                [self requestTrackingAuthorizationCallback](requestId, requestId);
+                [self requestTrackingAuthorizationCallback](requestId, rawStatus);
             }
         }];
     } else {
         if ([self requestTrackingAuthorizationCallback] != NULL) {
-            [self requestTrackingAuthorizationCallback](requestId, requestId);
+            [self requestTrackingAuthorizationCallback](requestId, rawStatus);
         }
     }
 }
