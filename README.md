@@ -127,6 +127,10 @@ In this section you can control the current status of the editor implementation 
 ### iOS Build settings
 
 The plugin offers automated options for post-processing on iOS.
+> The settings file is located in: 
+>  "ProjectSettings/com.lupidan.unity-apptrackingtransparency/AppTrackingTransparencySettings.json"
+> This is a file you will want to commit to your repository, to keep your plugin configuration.
+
 This section allow you to configure what parts of the automatic post-processing you want to have for your project.
 - *Automatic postprocessing*: If enabled the automatic postprocessing for iOS will be run. If disabled, it will be completely ignored.
 - *Postprocessing Callback Order*: The order in which the postprocessing will be run. You can change the number so it works along other postprocessing scripts you may have in your project. The default value is 10.
