@@ -127,9 +127,12 @@ In this section you can control the current status of the editor implementation 
 ### iOS Build settings
 
 The plugin offers automated options for post-processing on iOS.
-> The settings file is located in: 
->  "ProjectSettings/com.lupidan.unity-apptrackingtransparency/AppTrackingTransparencySettings.json"
-> This is a file you will want to commit to your repository, to keep your plugin configuration.
+
+The first time you modify the iOS Build Settings, settings are saved in:
+
+`ProjectSettings/com.lupidan.unity-apptrackingtransparency/AppTrackingTransparencySettings.json"`
+
+> :warning: This is a file you will want to commit to your repository, to keep your plugin configuration saved.
 
 This section allow you to configure what parts of the automatic post-processing you want to have for your project.
 - *Automatic postprocessing*: If enabled the automatic postprocessing for iOS will be run. If disabled, it will be completely ignored.
