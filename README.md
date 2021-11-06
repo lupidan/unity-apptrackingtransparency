@@ -126,11 +126,9 @@ In this section you can control the current status of the editor implementation 
 
 ### iOS Build settings
 
-The plugin offers automated options for post-processing on iOS.
+The plugin offers automated options for post-processing on iOS. The first time you modify the iOS Build Settings, settings are saved in:
 
-The first time you modify the iOS Build Settings, settings are saved in:
-
-`ProjectSettings/com.lupidan.unity-apptrackingtransparency/AppTrackingTransparencySettings.json"`
+`ProjectSettings/com.lupidan.unity-apptrackingtransparency/AppTrackingTransparencySettings.json`
 
 > :warning: This is a file you will want to commit to your repository, to keep your plugin configuration saved.
 
