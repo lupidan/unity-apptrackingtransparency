@@ -77,7 +77,7 @@ namespace AppTrackingTransparency.Editor
                 GUILayout.Label("iOS Build Settings", EditorStyles.boldLabel);
                 GUILayout.Space(10);
 
-                var settings = AppTrackingTransparencySettingsManager.LoadOrCreateSettings();
+                var settings = AppTrackingTransparencySettingsManager.LoadSettings();
                 GUILayout.Label("Settings file v" + settings.SettingsFileVersion, EditorStyles.miniLabel);
                 GUILayout.Label(AppTrackingTransparencySettingsManager.PrintableProjectSettingsFilePath, EditorStyles.miniLabel);
 
@@ -118,14 +118,15 @@ namespace AppTrackingTransparency.Editor
                     GUILayout.Label("- " + GetUserTrackingUsageDescriptionHint(), EditorStyles.miniLabel);
                 }
 
-                AppTrackingTransparencySettingsManager.WriteSettings(settings);
-
                 GUILayout.Space(10);
                 if (GUILayout.Button("Reset to default", new [] {GUILayout.MaxWidth(150)}))
                 {
                     AppTrackingTransparencySettingsManager.DeleteSettings();
-                    AppTrackingTransparencySettingsManager.LoadSettings();
+                    settings = AppTrackingTransparencySettingsManager.LoadSettings();
                 }
+                
+                AppTrackingTransparencySettingsManager.WriteSettings(settings);
+                
                 EditorGUIUtility.labelWidth = labelWidth;
             }
         }
