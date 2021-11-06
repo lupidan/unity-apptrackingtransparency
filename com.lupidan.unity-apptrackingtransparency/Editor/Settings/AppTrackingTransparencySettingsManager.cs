@@ -24,31 +24,20 @@ namespace AppTrackingTransparency.Editor.Settings
             SettingsFolderPath,
             DedicatedSettingsFileName);
 
-        public static AppTrackingTransparencySettings LoadOrCreateSettings()
-        {
-            var settings = LoadSettings();
-            if (settings == null)
-            {
-                settings = new AppTrackingTransparencySettings();
-                settings.SettingsFileVersion = 1;
-                settings.AutomaticPostProcessing = true;
-                settings.AutomaticPostProcessingCallbackOrder = 10;
-                settings.AddAppTransparencyTrackingFramework = true;
-                settings.AddUserTrackingUsageDescription = true;
-                settings.UserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you";
-                settings.AutoDetectInfoPlistFilePath = true;
-                settings.MainInfoPlistFilePath = "Info.plist";
-                WriteSettings(settings);
-            }
-
-            return settings;
-        }
-
         public static AppTrackingTransparencySettings LoadSettings()
         {
             if (!File.Exists(SettingsFilePath))
             {
-                return null;
+                var defaultSettings = new AppTrackingTransparencySettings();
+                defaultSettings.SettingsFileVersion = 1;
+                defaultSettings.AutomaticPostProcessing = true;
+                defaultSettings.AutomaticPostProcessingCallbackOrder = 10;
+                defaultSettings.AddAppTransparencyTrackingFramework = true;
+                defaultSettings.AddUserTrackingUsageDescription = true;
+                defaultSettings.UserTrackingUsageDescription = "Your data will be used to deliver personalized ads to you";
+                defaultSettings.AutoDetectInfoPlistFilePath = true;
+                defaultSettings.MainInfoPlistFilePath = "Info.plist";
+                return defaultSettings;
             }
 
             return JsonUtility.FromJson<AppTrackingTransparencySettings>(File.ReadAllText(SettingsFilePath));
