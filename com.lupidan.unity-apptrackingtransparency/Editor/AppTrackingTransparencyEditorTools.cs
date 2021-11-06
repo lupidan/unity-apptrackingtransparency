@@ -118,13 +118,15 @@ namespace AppTrackingTransparency.Editor
                     GUILayout.Label("- " + GetUserTrackingUsageDescriptionHint(), EditorStyles.miniLabel);
                 }
 
-                AppTrackingTransparencySettingsManager.WriteSettings(settings);
-
                 GUILayout.Space(10);
                 if (GUILayout.Button("Reset to default", new [] {GUILayout.MaxWidth(150)}))
                 {
                     AppTrackingTransparencySettingsManager.DeleteSettings();
+                    settings = AppTrackingTransparencySettingsManager.LoadSettings();
                 }
+                
+                AppTrackingTransparencySettingsManager.WriteSettings(settings);
+                
                 EditorGUIUtility.labelWidth = labelWidth;
             }
         }
